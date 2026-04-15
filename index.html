@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acompanhamento em Comunicação Consciente — Silvana Forster</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:        #F5EFE4;
+    --cream-soft:   #FBF7F1;
+    --orange:       #D96A1E;
+    --orange-mid:   #E8823A;
+    --orange-light: #FEF0E6;
+    --sand:         #EDE4D6;
+    --text-dark:    #2A1E14;
+    --text-body:    #4A3828;
+    --text-muted:   #8A7060;
+    --border:       #E4D9CC;
+  }
+
+  body {
+    background: var(--cream);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--text-dark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .doc {
+    max-width: 794px;
+    margin: 0 auto;
+    background: #ffffff;
+  }
+
+  /* ───── CAPA ───── */
+  .cover {
+    background: var(--cream);
+    padding: 72px 64px 80px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .wordmark {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 0.3px;
+  }
+
+  .wordmark-sub {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .cover-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--orange);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 4px 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .cover-bottom {
+    margin-top: 72px;
+  }
+
+  .cover-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .cover-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.07;
+    letter-spacing: -1px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 900;
+  }
+
+  .cover-tagline {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 20px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* ───── CORPO ───── */
+  .body-wrap {
+    padding: 0 64px 72px;
+    background: #ffffff;
+  }
+
+  /* ───── SEÇÃO ───── */
+  .section {
+    padding-top: 52px;
+  }
+
+  .section + .section {
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .section-intro {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  /* ───── BIO ───── */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .bio-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.82;
+    margin-bottom: 14px;
+  }
+
+  .bio-text strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  .bio-photo {
+    width: 180px;
+    height: 200px;
+    border-radius: 14px;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .bio-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .photo-placeholder-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 12px;
+    line-height: 1.6;
+  }
+
+  /* ───── CARDS 2×2 ───── */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .profile-card {
+    background: var(--cream-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .profile-card p {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.75;
+  }
+
+  /* ───── LISTA DE ITENS ───── */
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .item-card {
+    background: var(--cream-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .item-dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-top: 5px;
+  }
+
+  .item-text-wrap { flex: 1; }
+
+  .item-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+  }
+
+  .item-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.65;
+  }
+
+  /* ───── TIMELINE ───── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  .timeline-content {
+    padding-top: 4px;
+  }
+
+  .timeline-step {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.65;
+  }
+
+  /* ───── GRID INFO ───── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .info-card {
+    background: var(--cream-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+
+  .info-card-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .info-card-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .info-card-sub {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    line-height: 1.55;
+  }
+
+  /* ───── CAIXA DE INVESTIMENTO ───── */
+  .investment-box {
+    background: var(--orange-light);
+    border: 1.5px solid var(--orange);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 16px;
+  }
+
+  .investment-label {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .investment-price {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .investment-alt {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    color: var(--text-body);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* ───── DESTAQUE (CONVITE) ───── */
+  .highlight-box {
+    background: var(--orange-light);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 4px;
+  }
+
+  .highlight-box p {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14.5px;
+    color: var(--text-body);
+    line-height: 1.85;
+    font-style: italic;
+  }
+
+  /* ───── CONTATO ───── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contact-card {
+    background: var(--cream-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .contact-type {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .contact-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+
+  /* ───── RODAPÉ ───── */
+  .footer {
+    background: var(--cream);
+    border-top: 1.5px solid var(--border);
+    padding: 28px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 52px;
+  }
+
+  .footer-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+
+  .footer-sub {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .footer-tagline {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  @media print {
+    body { background: #ffffff; }
+    .doc { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="cover-top">
+      <div>
+        <div class="wordmark">Silvana Forster</div>
+        <div class="wordmark-sub">Comunicação Consciente</div>
+      </div>
+      <span class="cover-badge">Proposta de acompanhamento</span>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-label">Da Teoria à Prática</div>
+      <div class="cover-title">
+        Acompanhamento em<br><em>Comunicação<br>Consciente</em>
+      </div>
+      <div class="cover-tagline">
+        Um processo individual para transformar o que você já sabe
+        em presença real: clareza, rotina e conteúdo que flui.
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPO -->
+  <div class="body-wrap">
+
+    <!-- SEÇÃO 1: QUEM SOU EU -->
+    <div class="section">
+      <div class="section-label">Quem te acompanha</div>
+      <div class="section-title">Olá! Eu sou a Silvana.</div>
+      <div class="bio-grid">
+        <div>
+          <p class="bio-text">
+            Trabalho para que a tua comunicação seja leve, <strong>coerente e sustentável</strong>, sem fórmulas prontas e sem perder a tua essência.
+          </p>
+          <p class="bio-text">
+            O <strong>Acompanhamento em Comunicação Consciente</strong> nasceu para quem já entendeu a importância da comunicação, mas ainda não conseguiu colocar em prática o que sabe.
+          </p>
+          <p class="bio-text">
+            É um processo de <strong>acompanhamento individual</strong> que te apoia a transformar o teu conhecimento em presença real: clareza, rotina e conteúdo que flui.
+          </p>
+        </div>
+        <div class="bio-photo">
+          <img src="silvana-foto.jpg" alt="Silvana Forster">
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 2: PRA QUEM É -->
+    <div class="section">
+      <div class="section-label">Perfil</div>
+      <div class="section-title">Pra quem é?</div>
+      <p class="section-intro">Para a profissional que:</p>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <p>Já tem bagagem, curso, teoria, mas trava na hora de agir</p>
+        </div>
+        <div class="profile-card">
+          <p>Busca uma comunicação que apresente seus serviços com clareza e represente quem ela é de verdade</p>
+        </div>
+        <div class="profile-card">
+          <p>Precisa de direção, clareza e companhia para organizar ideias e construir uma comunicação viva e consistente</p>
+        </div>
+        <div class="profile-card">
+          <p>Deseja autonomia e não dependência, quer aprender a caminhar com os próprios pés</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 3: OBJETIVO -->
+    <div class="section">
+      <div class="section-label">O que vamos construir juntas</div>
+      <div class="section-title">Objetivo do processo</div>
+      <p class="section-intro">Te apoiar a:</p>
+      <div class="item-list">
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Traduzir o que tu faz em uma comunicação clara e coerente</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Estruturar tua presença digital com leveza e propósito</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Criar uma rotina de conteúdo possível, sem peso nem fórmulas</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Desenvolver segurança para gravar, escrever e se posicionar</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Organizar cenário, luz e enquadramento para gravar com o que tu tem em casa</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-desc">Fazer a transição da teoria para a prática, com acompanhamento e direção</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 4: ESTRUTURA -->
+    <div class="section">
+      <div class="section-label">Como funciona</div>
+      <div class="section-title">Estrutura do processo</div>
+      <p class="section-intro">
+        3 meses, 6 encontros quinzenais de 1h30 e suporte leve via WhatsApp entre os encontros.
+        Cada encontro tem um tema central e uma entrega prática para tu aplicar logo em seguida.
+      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-num">1</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Clareza e direção</div>
+            <div class="timeline-desc">Entender teu momento, tua história e o que tu realmente quer comunicar. Com quem tu quer falar. O que, pra quem e por quê?</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">2</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Organização e conteúdo</div>
+            <div class="timeline-desc">Definir o assunto foco de cada mês. Abrir o guarda-chuva de temas e montar o esqueleto da tua comunicação.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">3</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Posicionamento e presença</div>
+            <div class="timeline-desc">Definir teu tom de voz e tua forma de aparecer. Como ter coerência e mostrar bastidores nos stories.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">4</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Criação e estrutura</div>
+            <div class="timeline-desc">Transformar ideias em falas, roteiros, legendas e conteúdos aplicáveis. Criar um banco criativo para agilizar o trabalho.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">5</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Prática e gravação</div>
+            <div class="timeline-desc">Orientações sobre luz, enquadramento, cenário e presença em vídeo com o Samuel. Um encontro para tirar tuas dúvidas depois de assistir à aula gravada.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">6</div>
+          <div class="timeline-content">
+            <div class="timeline-step">Revisão e autonomia</div>
+            <div class="timeline-desc">Revisar o caminho, ajustar o calendário e criar tua rotina sustentável.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 5: ENTREGAS -->
+    <div class="section">
+      <div class="section-label">O que você recebe</div>
+      <div class="section-title">Entregas inclusas</div>
+      <p class="section-intro">Durante o processo, tu recebe:</p>
+      <div class="item-list">
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-title">Mapa de Clareza</div>
+            <div class="item-desc">Documento com teus pilares e temas principais.</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-title">Modelo de Calendário Mensal</div>
+            <div class="item-desc">Estrutura para organizar teus conteúdos mês a mês.</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-title">Roteiros e carrosséis-modelo</div>
+            <div class="item-desc">Referências personalizadas conforme teu estilo. Eu crio os 3 primeiros roteiros e 3 modelos de carrossel, compartilhados no Canva para servir de referência.</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-title">Guia prático de gravação</div>
+            <div class="item-desc">Instruções de luz, enquadramento e cenário para gravar bem com o que tu tem em casa.</div>
+          </div>
+        </div>
+        <div class="item-card">
+          <div class="item-dot"></div>
+          <div class="item-text-wrap">
+            <div class="item-title">Checklist de Consistência</div>
+            <div class="item-desc">Para manter tua comunicação viva depois que o processo termina.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 6: INVESTIMENTO -->
+    <div class="section">
+      <div class="section-label">Investimento</div>
+      <div class="section-title">Prazo e valores</div>
+      <div class="two-col">
+        <div class="info-card">
+          <div class="info-card-label">Duração</div>
+          <div class="info-card-value">3 meses</div>
+          <div class="info-card-sub">6 encontros quinzenais de 1h30 cada</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Acompanhamento</div>
+          <div class="info-card-value">Via WhatsApp</div>
+          <div class="info-card-sub">Suporte leve entre os encontros, no teu ritmo</div>
+        </div>
+      </div>
+      <div class="investment-box">
+        <div class="investment-label">Investimento</div>
+        <div class="investment-price">R$ 2.500</div>
+        <div class="investment-alt">À vista no Pix ou a partir de R$ 2.600 no cartão</div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 7: CONVITE -->
+    <div class="section">
+      <div class="section-label">Um convite</div>
+      <div class="section-title">Se esse é o teu momento</div>
+      <div class="highlight-box">
+        <p>
+          Esse acompanhamento é um espaço para construir, com calma e clareza, uma comunicação que faça sentido pra ti.
+          Sem pressa, sem comparação, sem fórmulas. Apenas presença, direção e prática consciente.
+          <br><br>
+          Se tu sente que esse é o momento de tirar tuas ideias do papel e colocar tua voz no mundo, eu te acompanho.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 8: CONTATO -->
+    <div class="section">
+      <div class="section-label">Fale comigo</div>
+      <div class="section-title">Onde me encontrar</div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-type">WhatsApp</div>
+          <div class="contact-value">(51) 98060.3512</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-type">Instagram</div>
+          <div class="contact-value">@silvanaforster</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-type">E-mail</div>
+          <div class="contact-value">silvana.ws@gmail.com</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="footer">
+    <div>
+      <div class="footer-brand">Silvana Forster</div>
+      <div class="footer-sub">@silvanaforster · silvana.ws@gmail.com</div>
+    </div>
+    <div class="footer-tagline">Comunicação Consciente · Da Teoria à Prática</div>
+  </div>
+
+</div>
+</body>
+</html>
