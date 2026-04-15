@@ -21,25 +21,35 @@
     --border:       #E4D9CC;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     background: var(--cream);
     font-family: 'Be Vietnam Pro', sans-serif;
     color: var(--text-dark);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    overflow: hidden;
   }
 
   .doc {
     max-width: 794px;
     margin: 0 auto;
     background: #ffffff;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
   /* ───── CAPA ───── */
   .cover {
     background: var(--cream);
     padding: 72px 64px 80px;
-    min-height: 400px;
+    min-height: 100vh;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -103,9 +113,19 @@
   }
 
   .cover-title em {
-    font-style: italic;
+    font-style: normal;
     color: var(--orange);
     font-weight: 900;
+  }
+
+  .cover-subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 24px;
+    line-height: 1.5;
+    max-width: 520px;
   }
 
   .cover-tagline {
@@ -113,20 +133,25 @@
     font-size: 14.5px;
     font-weight: 400;
     color: var(--text-muted);
-    margin-top: 20px;
+    margin-top: 14px;
     line-height: 1.7;
     max-width: 520px;
   }
 
   /* ───── CORPO ───── */
   .body-wrap {
-    padding: 0 64px 72px;
+    padding: 0;
     background: #ffffff;
   }
 
   /* ───── SEÇÃO ───── */
   .section {
-    padding-top: 52px;
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 72px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .section + .section {
@@ -385,6 +410,15 @@
     margin-bottom: 10px;
   }
 
+  .investment-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-body);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
   .investment-price {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 38px;
@@ -400,6 +434,28 @@
     color: var(--text-body);
     margin-top: 8px;
     line-height: 1.5;
+  }
+
+  /* ───── CTA ───── */
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background: var(--orange);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 16px 28px;
+    text-decoration: none;
+    margin-top: 28px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .cta-btn:hover {
+    background: #b85518;
+    transform: translateY(-2px);
   }
 
   /* ───── DESTAQUE (CONVITE) ───── */
@@ -505,6 +561,10 @@
       <div class="cover-label">Da Teoria à Prática</div>
       <div class="cover-title">
         Acompanhamento em<br><em>Comunicação<br>Consciente</em>
+      </div>
+      <div class="cover-subtitle">
+        Você já sabe o que precisa fazer.<br>
+        Só precisa saber por onde começar.
       </div>
       <div class="cover-tagline">
         Um processo individual para transformar o que você já sabe
@@ -720,6 +780,7 @@
       </div>
       <div class="investment-box">
         <div class="investment-label">Investimento</div>
+        <div class="investment-desc">Três meses de acompanhamento individual — do diagnóstico à autonomia.</div>
         <div class="investment-price">R$ 2.500</div>
         <div class="investment-alt">À vista no Pix ou a partir de R$ 2.600 no cartão</div>
       </div>
@@ -739,24 +800,14 @@
       </div>
     </div>
 
-    <!-- SEÇÃO 8: CONTATO -->
+    <!-- SEÇÃO 8: CTA FINAL -->
     <div class="section">
-      <div class="section-label">Fale comigo</div>
-      <div class="section-title">Onde me encontrar</div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-type">WhatsApp</div>
-          <div class="contact-value">(51) 98060.3512</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-type">Instagram</div>
-          <div class="contact-value">@silvanaforster</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-type">E-mail</div>
-          <div class="contact-value">silvana.ws@gmail.com</div>
-        </div>
-      </div>
+      <div class="section-label">Próximo passo</div>
+      <div class="section-title">Se esse é o teu momento, me manda uma mensagem.</div>
+      <p class="section-intro">Vamos conversar para entender o que faz sentido pra ti.</p>
+      <a href="https://wa.me/5551980603512" class="cta-btn" target="_blank" rel="noopener">
+        Falar com a Silvana pelo WhatsApp →
+      </a>
     </div>
 
   </div>
