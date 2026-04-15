@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -34,8 +33,8 @@
     overflow: hidden;
   }
 
+  /* AJUSTE 1: removido max-width: 794px, agora ocupa a tela toda */
   .doc {
-    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     background: #ffffff;
@@ -46,6 +45,7 @@
   }
 
   /* ───── CAPA ───── */
+  /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
   .cover {
     background: var(--cream);
     padding: 72px 8vw 80px;
@@ -119,6 +119,8 @@
     font-weight: 900;
   }
 
+  /* AJUSTE 3: cover-subtitle era italic implícito via <em> no título,
+     agora é texto direto sem itálico */
   .cover-subtitle {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px;
@@ -127,6 +129,7 @@
     margin-top: 24px;
     line-height: 1.5;
     max-width: 520px;
+    font-style: normal;
   }
 
   .cover-tagline {
@@ -137,6 +140,7 @@
     margin-top: 14px;
     line-height: 1.7;
     max-width: 520px;
+    font-style: normal;
   }
 
   /* ───── CORPO ───── */
@@ -149,6 +153,7 @@
   .section {
     scroll-snap-align: start;
     min-height: 100vh;
+    /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
     padding: 72px 8vw;
     display: flex;
     flex-direction: column;
@@ -471,6 +476,7 @@
     border-radius: 14px;
     padding: 28px 32px;
     margin-top: 4px;
+    max-width: 860px;
   }
 
   .highlight-box p {
@@ -518,6 +524,7 @@
   .footer {
     background: var(--cream);
     border-top: 1.5px solid var(--border);
+    /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
     padding: 28px 8vw;
     display: flex;
     justify-content: space-between;
@@ -548,7 +555,7 @@
 
   @media print {
     body { background: #ffffff; }
-    .doc { max-width: 100%; }
+    .doc { width: 100%; }
   }
 </style>
 </head>
@@ -569,6 +576,7 @@
       <div class="cover-title">
         Acompanhamento em<br><em>Comunicação<br>Consciente</em>
       </div>
+      <!-- AJUSTE 3: frases sem itálico, diretas -->
       <div class="cover-subtitle">
         Você já sabe o que precisa fazer.<br>
         Só precisa saber por onde começar.
@@ -785,6 +793,7 @@
           <div class="info-card-sub">Suporte leve entre os encontros, no teu ritmo</div>
         </div>
       </div>
+      <!-- AJUSTE 4: frase de contexto antes do preço -->
       <div class="investment-box">
         <div class="investment-label">Investimento</div>
         <div class="investment-desc">Três meses de acompanhamento individual — do diagnóstico à autonomia.</div>
