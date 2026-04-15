@@ -33,7 +33,6 @@
     overflow: hidden;
   }
 
-  /* AJUSTE 1: removido max-width: 794px, agora ocupa a tela toda */
   .doc {
     width: 100%;
     margin: 0 auto;
@@ -42,10 +41,17 @@
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: 860px;
   }
 
   /* ───── CAPA ───── */
-  /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
   .cover {
     background: var(--cream);
     padding: 72px 8vw 80px;
@@ -55,6 +61,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-bottom: 1.5px solid var(--border);
+    width: 100%;
   }
 
   .cover-top {
@@ -119,8 +126,6 @@
     font-weight: 900;
   }
 
-  /* AJUSTE 3: cover-subtitle era italic implícito via <em> no título,
-     agora é texto direto sem itálico */
   .cover-subtitle {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px;
@@ -147,17 +152,18 @@
   .body-wrap {
     padding: 0;
     background: #ffffff;
+    width: 100%;
   }
 
   /* ───── SEÇÃO ───── */
   .section {
     scroll-snap-align: start;
     min-height: 100vh;
-    /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
     padding: 72px 8vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
 
   .section + .section {
@@ -524,12 +530,12 @@
   .footer {
     background: var(--cream);
     border-top: 1.5px solid var(--border);
-    /* AJUSTE 2: padding horizontal trocado de 64px para 8vw */
     padding: 28px 8vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 52px;
+    width: 100%;
   }
 
   .footer-brand {
@@ -564,26 +570,29 @@
 
   <!-- CAPA -->
   <div class="cover">
-    <div class="cover-top">
-      <div>
-        <div class="wordmark">Silvana Forster</div>
-        <div class="wordmark-sub">Comunicação Consciente</div>
+    <div class="inner">
+      <div class="cover-top">
+        <div>
+          <div class="wordmark">Silvana Forster</div>
+          <div class="wordmark-sub">Comunicação Consciente</div>
+        </div>
+        <span class="cover-badge">Proposta de acompanhamento</span>
       </div>
-      <span class="cover-badge">Proposta de acompanhamento</span>
     </div>
-    <div class="cover-bottom">
-      <div class="cover-label">Da Teoria à Prática</div>
-      <div class="cover-title">
-        Acompanhamento em<br><em>Comunicação<br>Consciente</em>
-      </div>
-      <!-- AJUSTE 3: frases sem itálico, diretas -->
-      <div class="cover-subtitle">
-        Você já sabe o que precisa fazer.<br>
-        Só precisa saber por onde começar.
-      </div>
-      <div class="cover-tagline">
-        Um processo individual para transformar o que você já sabe
-        em presença real: clareza, rotina e conteúdo que flui.
+    <div class="inner">
+      <div class="cover-bottom">
+        <div class="cover-label">Da Teoria à Prática</div>
+        <div class="cover-title">
+          Acompanhamento em<br><em>Comunicação<br>Consciente</em>
+        </div>
+        <div class="cover-subtitle">
+          Você já sabe o que precisa fazer.<br>
+          Só precisa saber por onde começar.
+        </div>
+        <div class="cover-tagline">
+          Um processo individual para transformar o que você já sabe
+          em presença real: clareza, rotina e conteúdo que flui.
+        </div>
       </div>
     </div>
   </div>
@@ -593,87 +602,93 @@
 
     <!-- SEÇÃO 1: QUEM SOU EU -->
     <div class="section">
-      <div class="section-label">Quem te acompanha</div>
-      <div class="section-title">Olá! Eu sou a Silvana.</div>
-      <div class="bio-grid">
-        <div>
-          <p class="bio-text">
-            Trabalho para que a tua comunicação seja leve, <strong>coerente e sustentável</strong>, sem fórmulas prontas e sem perder a tua essência.
-          </p>
-          <p class="bio-text">
-            O <strong>Acompanhamento em Comunicação Consciente</strong> nasceu para quem já entendeu a importância da comunicação, mas ainda não conseguiu colocar em prática o que sabe.
-          </p>
-          <p class="bio-text">
-            É um processo de <strong>acompanhamento individual</strong> que te apoia a transformar o teu conhecimento em presença real: clareza, rotina e conteúdo que flui.
-          </p>
-        </div>
-        <div class="bio-photo">
-          <img src="silvana-foto.jpg" alt="Silvana Forster">
+      <div class="inner">
+        <div class="section-label">Quem te acompanha</div>
+        <div class="section-title">Olá! Eu sou a Silvana.</div>
+        <div class="bio-grid">
+          <div>
+            <p class="bio-text">
+              Trabalho para que a tua comunicação seja leve, <strong>coerente e sustentável</strong>, sem fórmulas prontas e sem perder a tua essência.
+            </p>
+            <p class="bio-text">
+              O <strong>Acompanhamento em Comunicação Consciente</strong> nasceu para quem já entendeu a importância da comunicação, mas ainda não conseguiu colocar em prática o que sabe.
+            </p>
+            <p class="bio-text">
+              É um processo de <strong>acompanhamento individual</strong> que te apoia a transformar o teu conhecimento em presença real: clareza, rotina e conteúdo que flui.
+            </p>
+          </div>
+          <div class="bio-photo">
+            <img src="silvana-foto.jpg" alt="Silvana Forster">
+          </div>
         </div>
       </div>
     </div>
 
     <!-- SEÇÃO 2: PRA QUEM É -->
     <div class="section">
-      <div class="section-label">Perfil</div>
-      <div class="section-title">Pra quem é?</div>
-      <p class="section-intro">Para a profissional que:</p>
-      <div class="profile-grid">
-        <div class="profile-card">
-          <p>Já tem bagagem, curso, teoria, mas trava na hora de agir</p>
-        </div>
-        <div class="profile-card">
-          <p>Busca uma comunicação que apresente seus serviços com clareza e represente quem ela é de verdade</p>
-        </div>
-        <div class="profile-card">
-          <p>Precisa de direção, clareza e companhia para organizar ideias e construir uma comunicação viva e consistente</p>
-        </div>
-        <div class="profile-card">
-          <p>Deseja autonomia e não dependência, quer aprender a caminhar com os próprios pés</p>
+      <div class="inner">
+        <div class="section-label">Perfil</div>
+        <div class="section-title">Pra quem é?</div>
+        <p class="section-intro">Para a profissional que:</p>
+        <div class="profile-grid">
+          <div class="profile-card">
+            <p>Já tem bagagem, curso, teoria, mas trava na hora de agir</p>
+          </div>
+          <div class="profile-card">
+            <p>Busca uma comunicação que apresente seus serviços com clareza e represente quem ela é de verdade</p>
+          </div>
+          <div class="profile-card">
+            <p>Precisa de direção, clareza e companhia para organizar ideias e construir uma comunicação viva e consistente</p>
+          </div>
+          <div class="profile-card">
+            <p>Deseja autonomia e não dependência, quer aprender a caminhar com os próprios pés</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- SEÇÃO 3: OBJETIVO -->
     <div class="section">
-      <div class="section-label">O que vamos construir juntas</div>
-      <div class="section-title">Objetivo do processo</div>
-      <p class="section-intro">Te apoiar a:</p>
-      <div class="item-list">
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Traduzir o que tu faz em uma comunicação clara e coerente</div>
+      <div class="inner">
+        <div class="section-label">O que vamos construir juntas</div>
+        <div class="section-title">Objetivo do processo</div>
+        <p class="section-intro">Te apoiar a:</p>
+        <div class="item-list">
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Traduzir o que tu faz em uma comunicação clara e coerente</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Estruturar tua presença digital com leveza e propósito</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Estruturar tua presença digital com leveza e propósito</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Criar uma rotina de conteúdo possível, sem peso nem fórmulas</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Criar uma rotina de conteúdo possível, sem peso nem fórmulas</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Desenvolver segurança para gravar, escrever e se posicionar</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Desenvolver segurança para gravar, escrever e se posicionar</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Organizar cenário, luz e enquadramento para gravar com o que tu tem em casa</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Organizar cenário, luz e enquadramento para gravar com o que tu tem em casa</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-desc">Fazer a transição da teoria para a prática, com acompanhamento e direção</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-desc">Fazer a transição da teoria para a prática, com acompanhamento e direção</div>
+            </div>
           </div>
         </div>
       </div>
@@ -681,53 +696,55 @@
 
     <!-- SEÇÃO 4: ESTRUTURA -->
     <div class="section">
-      <div class="section-label">Como funciona</div>
-      <div class="section-title">Estrutura do processo</div>
-      <p class="section-intro">
-        3 meses, 6 encontros quinzenais de 1h30 e suporte leve via WhatsApp entre os encontros.
-        Cada encontro tem um tema central e uma entrega prática para tu aplicar logo em seguida.
-      </p>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-num">1</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Clareza e direção</div>
-            <div class="timeline-desc">Entender teu momento, tua história e o que tu realmente quer comunicar. Com quem tu quer falar. O que, pra quem e por quê?</div>
+      <div class="inner">
+        <div class="section-label">Como funciona</div>
+        <div class="section-title">Estrutura do processo</div>
+        <p class="section-intro">
+          3 meses, 6 encontros quinzenais de 1h30 e suporte leve via WhatsApp entre os encontros.
+          Cada encontro tem um tema central e uma entrega prática para tu aplicar logo em seguida.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Clareza e direção</div>
+              <div class="timeline-desc">Entender teu momento, tua história e o que tu realmente quer comunicar. Com quem tu quer falar. O que, pra quem e por quê?</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-num">2</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Organização e conteúdo</div>
-            <div class="timeline-desc">Definir o assunto foco de cada mês. Abrir o guarda-chuva de temas e montar o esqueleto da tua comunicação.</div>
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Organização e conteúdo</div>
+              <div class="timeline-desc">Definir o assunto foco de cada mês. Abrir o guarda-chuva de temas e montar o esqueleto da tua comunicação.</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-num">3</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Posicionamento e presença</div>
-            <div class="timeline-desc">Definir teu tom de voz e tua forma de aparecer. Como ter coerência e mostrar bastidores nos stories.</div>
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Posicionamento e presença</div>
+              <div class="timeline-desc">Definir teu tom de voz e tua forma de aparecer. Como ter coerência e mostrar bastidores nos stories.</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-num">4</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Criação e estrutura</div>
-            <div class="timeline-desc">Transformar ideias em falas, roteiros, legendas e conteúdos aplicáveis. Criar um banco criativo para agilizar o trabalho.</div>
+          <div class="timeline-item">
+            <div class="timeline-num">4</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Criação e estrutura</div>
+              <div class="timeline-desc">Transformar ideias em falas, roteiros, legendas e conteúdos aplicáveis. Criar um banco criativo para agilizar o trabalho.</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-num">5</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Prática e gravação</div>
-            <div class="timeline-desc">Orientações sobre luz, enquadramento, cenário e presença em vídeo com o Samuel. Um encontro para tirar tuas dúvidas depois de assistir à aula gravada.</div>
+          <div class="timeline-item">
+            <div class="timeline-num">5</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Prática e gravação</div>
+              <div class="timeline-desc">Orientações sobre luz, enquadramento, cenário e presença em vídeo com o Samuel. Um encontro para tirar tuas dúvidas depois de assistir à aula gravada.</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-num">6</div>
-          <div class="timeline-content">
-            <div class="timeline-step">Revisão e autonomia</div>
-            <div class="timeline-desc">Revisar o caminho, ajustar o calendário e criar tua rotina sustentável.</div>
+          <div class="timeline-item">
+            <div class="timeline-num">6</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Revisão e autonomia</div>
+              <div class="timeline-desc">Revisar o caminho, ajustar o calendário e criar tua rotina sustentável.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -735,43 +752,45 @@
 
     <!-- SEÇÃO 5: ENTREGAS -->
     <div class="section">
-      <div class="section-label">O que você recebe</div>
-      <div class="section-title">Entregas inclusas</div>
-      <p class="section-intro">Durante o processo, tu recebe:</p>
-      <div class="item-list">
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-title">Mapa de Clareza</div>
-            <div class="item-desc">Documento com teus pilares e temas principais.</div>
+      <div class="inner">
+        <div class="section-label">O que você recebe</div>
+        <div class="section-title">Entregas inclusas</div>
+        <p class="section-intro">Durante o processo, tu recebe:</p>
+        <div class="item-list">
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-title">Mapa de Clareza</div>
+              <div class="item-desc">Documento com teus pilares e temas principais.</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-title">Modelo de Calendário Mensal</div>
-            <div class="item-desc">Estrutura para organizar teus conteúdos mês a mês.</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-title">Modelo de Calendário Mensal</div>
+              <div class="item-desc">Estrutura para organizar teus conteúdos mês a mês.</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-title">Roteiros e carrosséis-modelo</div>
-            <div class="item-desc">Referências personalizadas conforme teu estilo. Eu crio os 3 primeiros roteiros e 3 modelos de carrossel, compartilhados no Canva para servir de referência.</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-title">Roteiros e carrosséis-modelo</div>
+              <div class="item-desc">Referências personalizadas conforme teu estilo. Eu crio os 3 primeiros roteiros e 3 modelos de carrossel, compartilhados no Canva para servir de referência.</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-title">Guia prático de gravação</div>
-            <div class="item-desc">Instruções de luz, enquadramento e cenário para gravar bem com o que tu tem em casa.</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-title">Guia prático de gravação</div>
+              <div class="item-desc">Instruções de luz, enquadramento e cenário para gravar bem com o que tu tem em casa.</div>
+            </div>
           </div>
-        </div>
-        <div class="item-card">
-          <div class="item-dot"></div>
-          <div class="item-text-wrap">
-            <div class="item-title">Checklist de Consistência</div>
-            <div class="item-desc">Para manter tua comunicação viva depois que o processo termina.</div>
+          <div class="item-card">
+            <div class="item-dot"></div>
+            <div class="item-text-wrap">
+              <div class="item-title">Checklist de Consistência</div>
+              <div class="item-desc">Para manter tua comunicação viva depois que o processo termina.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -779,51 +798,56 @@
 
     <!-- SEÇÃO 6: INVESTIMENTO -->
     <div class="section">
-      <div class="section-label">Investimento</div>
-      <div class="section-title">Prazo e valores</div>
-      <div class="two-col">
-        <div class="info-card">
-          <div class="info-card-label">Duração</div>
-          <div class="info-card-value">3 meses</div>
-          <div class="info-card-sub">6 encontros quinzenais de 1h30 cada</div>
+      <div class="inner">
+        <div class="section-label">Investimento</div>
+        <div class="section-title">Prazo e valores</div>
+        <div class="two-col">
+          <div class="info-card">
+            <div class="info-card-label">Duração</div>
+            <div class="info-card-value">3 meses</div>
+            <div class="info-card-sub">6 encontros quinzenais de 1h30 cada</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Acompanhamento</div>
+            <div class="info-card-value">Via WhatsApp</div>
+            <div class="info-card-sub">Suporte leve entre os encontros, no teu ritmo</div>
+          </div>
         </div>
-        <div class="info-card">
-          <div class="info-card-label">Acompanhamento</div>
-          <div class="info-card-value">Via WhatsApp</div>
-          <div class="info-card-sub">Suporte leve entre os encontros, no teu ritmo</div>
+        <div class="investment-box">
+          <div class="investment-label">Investimento</div>
+          <div class="investment-desc">Três meses de acompanhamento individual — do diagnóstico à autonomia.</div>
+          <div class="investment-price">R$ 2.500</div>
+          <div class="investment-alt">À vista no Pix ou a partir de R$ 2.600 no cartão</div>
         </div>
-      </div>
-      <!-- AJUSTE 4: frase de contexto antes do preço -->
-      <div class="investment-box">
-        <div class="investment-label">Investimento</div>
-        <div class="investment-desc">Três meses de acompanhamento individual — do diagnóstico à autonomia.</div>
-        <div class="investment-price">R$ 2.500</div>
-        <div class="investment-alt">À vista no Pix ou a partir de R$ 2.600 no cartão</div>
       </div>
     </div>
 
     <!-- SEÇÃO 7: CONVITE -->
     <div class="section">
-      <div class="section-label">Um convite</div>
-      <div class="section-title">Se esse é o teu momento</div>
-      <div class="highlight-box">
-        <p>
-          Esse acompanhamento é um espaço para construir, com calma e clareza, uma comunicação que faça sentido pra ti.
-          Sem pressa, sem comparação, sem fórmulas. Apenas presença, direção e prática consciente.
-          <br><br>
-          Se tu sente que esse é o momento de tirar tuas ideias do papel e colocar tua voz no mundo, eu te acompanho.
-        </p>
+      <div class="inner">
+        <div class="section-label">Um convite</div>
+        <div class="section-title">Se esse é o teu momento</div>
+        <div class="highlight-box">
+          <p>
+            Esse acompanhamento é um espaço para construir, com calma e clareza, uma comunicação que faça sentido pra ti.
+            Sem pressa, sem comparação, sem fórmulas. Apenas presença, direção e prática consciente.
+            <br><br>
+            Se tu sente que esse é o momento de tirar tuas ideias do papel e colocar tua voz no mundo, eu te acompanho.
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- SEÇÃO 8: CTA FINAL -->
     <div class="section">
-      <div class="section-label">Próximo passo</div>
-      <div class="section-title">Se esse é o teu momento, me manda uma mensagem.</div>
-      <p class="section-intro">Vamos conversar para entender o que faz sentido pra ti.</p>
-      <a href="https://wa.me/5551980603512" class="cta-btn" target="_blank" rel="noopener">
-        Falar com a Silvana pelo WhatsApp →
-      </a>
+      <div class="inner">
+        <div class="section-label">Próximo passo</div>
+        <div class="section-title">Se esse é o teu momento, me manda uma mensagem.</div>
+        <p class="section-intro">Vamos conversar para entender o que faz sentido pra ti.</p>
+        <a href="https://wa.me/5551980603512" class="cta-btn" target="_blank" rel="noopener">
+          Falar com a Silvana pelo WhatsApp →
+        </a>
+      </div>
     </div>
 
   </div>
