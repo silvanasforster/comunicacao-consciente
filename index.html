@@ -35,7 +35,8 @@
   }
 
   .doc {
-    max-width: 794px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     background: #ffffff;
     height: 100vh;
@@ -47,7 +48,7 @@
   /* ───── CAPA ───── */
   .cover {
     background: var(--cream);
-    padding: 72px 64px 80px;
+    padding: 72px 8vw 80px;
     min-height: 100vh;
     scroll-snap-align: start;
     display: flex;
@@ -148,7 +149,7 @@
   .section {
     scroll-snap-align: start;
     min-height: 100vh;
-    padding: 72px 64px;
+    padding: 72px 8vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,6 +193,7 @@
     grid-template-columns: 1fr 180px;
     gap: 32px;
     align-items: start;
+    max-width: 860px;
   }
 
   .bio-text {
@@ -240,6 +242,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+    max-width: 860px;
   }
 
   .profile-card {
@@ -261,6 +264,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 860px;
   }
 
   .item-card {
@@ -303,6 +307,7 @@
   .timeline {
     display: flex;
     flex-direction: column;
+    max-width: 860px;
   }
 
   .timeline-item {
@@ -356,6 +361,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+    max-width: 860px;
   }
 
   .info-card {
@@ -398,6 +404,7 @@
     border-radius: 14px;
     padding: 28px 32px;
     margin-top: 16px;
+    max-width: 860px;
   }
 
   .investment-label {
@@ -511,7 +518,7 @@
   .footer {
     background: var(--cream);
     border-top: 1.5px solid var(--border);
-    padding: 28px 64px;
+    padding: 28px 8vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
