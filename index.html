@@ -18,18 +18,20 @@
 
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.container');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.12 });
+      }, { root: container, threshold: 0.12 });
       document.querySelectorAll('.slide').forEach(s => observer.observe(s));
     });
   </script>
 </head>
 <body>
+<div class="container">
 
   <!-- SEÇÃO 1 — CAPA -->
   <section class="slide slide--cover" id="capa">
@@ -136,13 +138,13 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 5 — ESTRUTURA -->
-  <section class="slide slide--dark" id="estrutura">
+  <!-- SEÇÃO 5 — COMO FUNCIONA PARTE 1 -->
+  <section class="slide slide--dark" id="estrutura-1">
     <div class="slide__content slide__content--center">
-      <p class="slide__eyebrow">Como funciona</p>
+      <p class="slide__eyebrow">Como funciona · Encontros 1 a 3</p>
       <h2 class="slide__title">Estrutura do processo</h2>
-      <p class="slide__body">3 meses, 6 encontros quinzenais de 1h30 e suporte leve via WhatsApp entre os encontros. Cada encontro tem um tema central e uma entrega prática para tu aplicar logo em seguida.</p>
-      <div class="process-grid">
+      <p class="slide__body">3 meses, 6 encontros quinzenais de 1h30 e suporte leve via WhatsApp entre os encontros.</p>
+      <div class="process-grid process-grid--single">
         <div class="process-step">
           <span class="process-step__num">01</span>
           <div class="process-step__content">
@@ -164,6 +166,16 @@
             <p class="process-step__desc">Definir teu tom de voz e tua forma de aparecer. Como ter coerência e mostrar bastidores nos stories.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 6 — COMO FUNCIONA PARTE 2 -->
+  <section class="slide slide--dark" id="estrutura-2">
+    <div class="slide__content slide__content--center">
+      <p class="slide__eyebrow">Como funciona · Encontros 4 a 6</p>
+      <h2 class="slide__title">Estrutura do processo</h2>
+      <div class="process-grid process-grid--single">
         <div class="process-step">
           <span class="process-step__num">04</span>
           <div class="process-step__content">
@@ -189,13 +201,12 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 6 — ENTREGAS -->
-  <section class="slide slide--creme" id="entregas">
+  <!-- SEÇÃO 7 — ENTREGAS PARTE 1 -->
+  <section class="slide slide--creme" id="entregas-1">
     <div class="slide__content slide__content--center">
       <div class="slide__divider slide__divider--center"></div>
-      <p class="slide__eyebrow slide__eyebrow--orange">O que você recebe</p>
+      <p class="slide__eyebrow slide__eyebrow--orange">O que você recebe · 1 de 2</p>
       <h2 class="slide__title slide__title--dark">Entregas inclusas</h2>
-      <p class="slide__body slide__body--dark">Durante o processo, tu recebe:</p>
       <div class="feature-list">
         <div class="feature-item">
           <p class="feature-item__title">Mapa de Clareza</p>
@@ -207,8 +218,19 @@
         </div>
         <div class="feature-item">
           <p class="feature-item__title">Roteiros e carrosséis-modelo</p>
-          <p class="feature-item__desc">Referências personalizadas conforme teu estilo. Eu crio os 3 primeiros roteiros e 3 modelos de carrossel, compartilhados no Canva para servir de referência.</p>
+          <p class="feature-item__desc">Eu crio os 3 primeiros roteiros e 3 modelos de carrossel, compartilhados no Canva para servir de referência.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 8 — ENTREGAS PARTE 2 -->
+  <section class="slide slide--creme" id="entregas-2">
+    <div class="slide__content slide__content--center">
+      <div class="slide__divider slide__divider--center"></div>
+      <p class="slide__eyebrow slide__eyebrow--orange">O que você recebe · 2 de 2</p>
+      <h2 class="slide__title slide__title--dark">Entregas inclusas</h2>
+      <div class="feature-list">
         <div class="feature-item">
           <p class="feature-item__title">Guia prático de gravação</p>
           <p class="feature-item__desc">Instruções de luz, enquadramento e cenário para gravar bem com o que tu tem em casa.</p>
@@ -221,7 +243,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 7 — INVESTIMENTO -->
+  <!-- SEÇÃO 9 — INVESTIMENTO -->
   <section class="slide slide--creme" id="investimento">
     <div class="slide__content slide__content--center">
       <div class="slide__divider slide__divider--center"></div>
@@ -239,7 +261,7 @@
           <p class="invest-info-card__sub">Suporte leve entre os encontros, no teu ritmo</p>
         </div>
       </div>
-      <div class="option-card option-card--featured" style="max-width: 520px; margin-top: 1.5rem;">
+      <div class="option-card option-card--featured" id="invest-card">
         <p class="option-card__label">Acompanhamento Individual</p>
         <h3 class="option-card__title">Comunicação Consciente</h3>
         <p class="option-card__tagline">Três meses de acompanhamento individual, do diagnóstico à autonomia.</p>
@@ -247,7 +269,7 @@
         <ul>
           <li>6 encontros quinzenais de 1h30 cada</li>
           <li>Suporte leve via WhatsApp entre os encontros</li>
-          <li>Mapa de Clareza (documento com pilares e temas principais)</li>
+          <li>Mapa de Clareza (pilares e temas principais)</li>
           <li>Modelo de Calendário Mensal</li>
           <li>3 roteiros e 3 modelos de carrossel no Canva</li>
           <li>Guia prático de gravação (luz, enquadramento e cenário)</li>
@@ -261,7 +283,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 8 — CONVITE -->
+  <!-- SEÇÃO 10 — CONVITE -->
   <section class="slide slide--dark" id="convite">
     <div class="slide__content slide__content--center">
       <p class="slide__eyebrow">Um convite</p>
@@ -277,7 +299,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 9 — ENCERRAMENTO -->
+  <!-- SEÇÃO 11 — ENCERRAMENTO -->
   <section class="slide slide--cover" id="encerramento">
     <div class="slide__bg" style="background-image: url('silvana-foto.jpg')"></div>
     <div class="slide__overlay slide__overlay--heavy"></div>
@@ -294,5 +316,6 @@
     </div>
   </section>
 
+</div>
 </body>
 </html>
