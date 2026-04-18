@@ -465,6 +465,86 @@ img {
 }
 
 /* ==========================================================================
+   TWO-COL LAYOUT — seções unificadas em duas colunas
+   ========================================================================== */
+
+.two-col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2.5rem;
+  margin-top: 1.75rem;
+  max-width: 920px;
+  width: 100%;
+  align-items: start;
+  text-align: left;
+}
+
+.two-col-layout__col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Último item de cada coluna perde o border */
+.two-col-layout .process-step:last-child,
+.two-col-layout .feature-item:last-child {
+  border-bottom: none;
+}
+
+/* Condensado: #estrutura */
+#estrutura .slide__content {
+  padding: 2.5rem 3.5rem;
+}
+
+#estrutura .slide__title {
+  margin-bottom: 0.5rem;
+}
+
+#estrutura .slide__body {
+  font-size: 0.83rem;
+  margin-bottom: 0;
+}
+
+#estrutura .process-step {
+  padding: 0.8rem 0;
+}
+
+#estrutura .process-step__title {
+  font-size: 0.88rem;
+  margin-bottom: 0.2rem;
+}
+
+#estrutura .process-step__desc {
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* Condensado: #entregas */
+#entregas .slide__content {
+  padding: 2.5rem 3.5rem;
+}
+
+#entregas .slide__divider {
+  margin-bottom: 0.75rem;
+}
+
+#entregas .slide__title {
+  margin-bottom: 0;
+}
+
+#entregas .feature-item {
+  padding: 0.9rem 0 0.9rem 1.25rem;
+}
+
+#entregas .feature-item__title {
+  font-size: 0.9rem;
+}
+
+#entregas .feature-item__desc {
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+/* ==========================================================================
    PERFIL — 2×2 cards
    ========================================================================== */
 
@@ -845,6 +925,7 @@ img {
 .slide__divider,
 .process-grid,
 .process-step,
+.two-col-layout,
 .profile-grid,
 .feature-list,
 .invest-info-grid,
@@ -868,6 +949,7 @@ img {
 .slide.is-visible .slide__divider,
 .slide.is-visible .process-grid,
 .slide.is-visible .process-step,
+.slide.is-visible .two-col-layout,
 .slide.is-visible .profile-grid,
 .slide.is-visible .feature-list,
 .slide.is-visible .invest-info-grid,
@@ -888,6 +970,7 @@ img {
 .slide.is-visible .slide__badge     { transition-delay: 0.58s; }
 .slide.is-visible .slide__credits   { transition-delay: 0.62s; }
 .slide.is-visible .process-grid     { transition-delay: 0.32s; }
+.slide.is-visible .two-col-layout   { transition-delay: 0.32s; }
 .slide.is-visible .profile-grid     { transition-delay: 0.32s; }
 .slide.is-visible .feature-list     { transition-delay: 0.32s; }
 .slide.is-visible .invest-info-grid { transition-delay: 0.32s; }
@@ -911,7 +994,7 @@ img {
   .slide__bg { transform: none; }
   .slide__eyebrow, .slide__title, .slide__subtitle, .slide__support,
   .slide__body, .slide__badge, .slide__credits, .slide__divider,
-  .process-grid, .process-step, .profile-grid, .feature-list,
+  .process-grid, .process-step, .two-col-layout, .profile-grid, .feature-list,
   .invest-info-grid, .option-card, .highlight-box, .cta-btn, .contact {
     opacity: 1;
     transform: none;
@@ -981,6 +1064,16 @@ img {
 
   .slide__title--hero {
     font-size: clamp(1.9rem, 7vw, 2.8rem);
+  }
+
+  .two-col-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #estrutura .slide__content,
+  #entregas .slide__content {
+    padding: 2rem 1.5rem;
   }
 
   .process-grid,
