@@ -837,54 +837,17 @@ img {
 }
 
 /* ==========================================================================
-   ENCERRAMENTO unificado — layout duas colunas sobre foto
+   CTA + ENCERRAMENTO
    ========================================================================== */
 
-.two-col-layout--closing {
-  margin-top: 2rem;
-  gap: 0 4rem;
-  max-width: 960px;
-  align-items: start;
-}
-
-#encerramento .highlight-box {
-  margin: 0;
-  padding: 0 0 0 1.5rem;
-}
-
-.two-col-layout__col--cta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.closing__lead {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-.closing__sub {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.52);
-  line-height: 1.65;
-}
-
 #encerramento .cta-btn {
-  margin-top: 1.75rem;
+  margin-top: 2rem;
 }
 
 #encerramento .contact {
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
 }
-
-/* ==========================================================================
-   CTA + ENCERRAMENTO
-   ========================================================================== */
 
 .cta-btn {
   display: inline-flex;
@@ -968,8 +931,6 @@ img {
 .invest-info-grid,
 .option-card,
 .highlight-box,
-.closing__lead,
-.closing__sub,
 .cta-btn,
 .contact {
   opacity: 0;
@@ -994,8 +955,6 @@ img {
 .slide.is-visible .invest-info-grid,
 .slide.is-visible .option-card,
 .slide.is-visible .highlight-box,
-.slide.is-visible .closing__lead,
-.slide.is-visible .closing__sub,
 .slide.is-visible .cta-btn,
 .slide.is-visible .contact {
   opacity: 1;
@@ -1017,8 +976,6 @@ img {
 .slide.is-visible .invest-info-grid { transition-delay: 0.32s; }
 .slide.is-visible .option-card      { transition-delay: 0.46s; }
 .slide.is-visible .highlight-box    { transition-delay: 0.32s; }
-.slide.is-visible .closing__lead    { transition-delay: 0.32s; }
-.slide.is-visible .closing__sub     { transition-delay: 0.42s; }
 .slide.is-visible .cta-btn          { transition-delay: 0.46s; }
 .slide.is-visible .contact          { transition-delay: 0.58s; }
 
@@ -1114,17 +1071,6 @@ img {
     gap: 0;
   }
 
-  .two-col-layout--closing {
-    gap: 2rem 0;
-  }
-
-  #encerramento .highlight-box {
-    padding: 0 0 0 1.25rem;
-  }
-
-  .two-col-layout__col--cta {
-    align-items: flex-start;
-  }
 
   #estrutura .slide__content,
   #entregas .slide__content {
