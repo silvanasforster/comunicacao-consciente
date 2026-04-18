@@ -249,15 +249,6 @@ img {
 }
 
 /* --- Hero (capa) --- */
-#capa {
-  justify-content: flex-end;
-}
-
-#capa .slide__content {
-  justify-content: flex-end;
-  padding-bottom: 4rem;
-}
-
 #capa .slide__bg {
   filter: brightness(0.52);
   background-position: center 18%;
